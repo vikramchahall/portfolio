@@ -640,7 +640,8 @@ body{
   .hero-left{
     display:contents;
   }
-  .hero-title{order:1;font-size:clamp(4rem,14vw,7rem);text-align:center;}
+ .hero-title{order:1;font-size:clamp(4rem,14vw,7rem);
+    text-align:center;letter-spacing:4px;word-spacing:10px;}
 .neon-stroke{text-align:center;}
   .hero-right{
     order:2;
@@ -673,7 +674,7 @@ body{
 }
 
 @media(max-width:480px){
-  .hero-title{font-size:3.5rem;}
+ .hero-title{font-size:3.5rem;letter-spacing:4px;word-spacing:10px;}
   .hero-stats{grid-template-columns:repeat(2,1fr);max-width:100%;}
   .stat-num{font-size:1.4rem;}
 }
