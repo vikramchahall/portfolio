@@ -114,7 +114,9 @@ body{
   display:none;flex-direction:column;
   position:fixed;top:56px;left:0;right:0;z-index:999;
   background:var(--bg);border-bottom:2px solid var(--red);
-  padding:24px 24px;gap:0;
+  padding:24px;gap:0;
+  width:100%;
+  overflow-x:hidden;
 }
 .mobile-menu.open{display:flex;}
 .mobile-menu a{
@@ -692,46 +694,26 @@ body{
   transform:translateY(0);
 }
 .scroll-top-btn:hover{background:var(--red);}
-/* ===== PAGE LOAD ANIMATION ===== */
-body:not(.loaded) .hero-title,
-body:not(.loaded) .hero-status,
-body:not(.loaded) .hero-descriptor,
-body:not(.loaded) .hero-sub,
-body:not(.loaded) .hero-meta,
-body:not(.loaded) .hero-actions,
-body:not(.loaded) .hero-links,
-body:not(.loaded) .hero-right{
-  opacity:0;transform:translateY(20px);
+
+@media(max-width:900px){
+  .scroll-top-btn{
+    right:25px;
+    bottom:16px;
+  }
+}   
+
+/* ===== OVERFLOW FIX ===== */
+html, body{
+  max-width:100%;
+  overflow-x:hidden;
 }
-body.loaded .hero-title{
-  transition:opacity 0.7s ease 0.1s,transform 0.7s ease 0.1s;
-  opacity:1;transform:translateY(0);
+
+.marquee-wrap{
+  overflow:hidden;
+  width:100%;
+  max-width:100%;
 }
-body.loaded .hero-status{
-  transition:opacity 0.6s ease 0.3s,transform 0.6s ease 0.3s;
-  opacity:1;transform:translateY(0);
-}
-body.loaded .hero-descriptor{
-  transition:opacity 0.6s ease 0.4s,transform 0.6s ease 0.4s;
-  opacity:1;transform:translateY(0);
-}
-body.loaded .hero-sub{
-  transition:opacity 0.6s ease 0.5s,transform 0.6s ease 0.5s;
-  opacity:1;transform:translateY(0);
-}
-body.loaded .hero-meta{
-  transition:opacity 0.6s ease 0.6s,transform 0.6s ease 0.6s;
-  opacity:1;transform:translateY(0);
-}
-body.loaded .hero-actions{
-  transition:opacity 0.6s ease 0.7s,transform 0.6s ease 0.7s;
-  opacity:1;transform:translateY(0);
-}
-body.loaded .hero-links{
-  transition:opacity 0.6s ease 0.8s,transform 0.6s ease 0.8s;
-  opacity:1;transform:translateY(0);
-}
-body.loaded .hero-right{
-  transition:opacity 0.8s ease 0.2s,transform 0.8s ease 0.2s;
-  opacity:1;transform:translateY(0);
+
+.marquee-track{
+  width:max-content;
 }
